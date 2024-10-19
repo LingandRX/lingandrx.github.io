@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+  
+  <entry>
+    <title>递归函数</title>
+    <link href="/2024/03/20/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/"/>
+    <url>/2024/03/20/%E9%80%92%E5%BD%92%E5%87%BD%E6%95%B0/</url>
+    
+    <content type="html"><![CDATA[<h2 id="递归函数"><a href="#递归函数" class="headerlink" title="递归函数"></a>递归函数</h2><h3 id="什么是递归？"><a href="#什么是递归？" class="headerlink" title="什么是递归？"></a>什么是递归？</h3><p>递归函数就是在函数内部，直接或者间接调用自己</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">func</span>(<span class="hljs-params"><span class="hljs-keyword">let</span> n</span>) &#123;<br>    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-comment">// 自己调用自己</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">func</span>(n - <span class="hljs-number">1</span>) * n;<br>&#125;<br></code></pre></td></tr></table></figure><h3 id="递归调用方式有几种？"><a href="#递归调用方式有几种？" class="headerlink" title="递归调用方式有几种？"></a>递归调用方式有几种？</h3><ol><li>直接调用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">func</span>(<span class="hljs-params"><span class="hljs-keyword">let</span> n</span>) &#123;<br>    <span class="hljs-keyword">if</span> (n === <span class="hljs-number">1</span>) &#123;<br>        <span class="hljs-keyword">return</span> n;<br>    &#125;<br>    <span class="hljs-comment">// 自己调用自己</span><br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">func</span>(n - <span class="hljs-number">1</span>) * n;<br>&#125;<br></code></pre></td></tr></table></figure></li><li>间接调用<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs JavaScript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun1</span>(<span class="hljs-params">a</span>) &#123;<br>    <span class="hljs-keyword">let</span> b = <span class="hljs-title function_">fun2</span>(a + <span class="hljs-number">1</span>);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">fun2</span>(<span class="hljs-params">s</span>) &#123;<br>    <span class="hljs-keyword">let</span> c = <span class="hljs-title function_">fun1</span>(s - <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure></li></ol><h3 id="如何设计递归函数？"><a href="#如何设计递归函数？" class="headerlink" title="如何设计递归函数？"></a>如何设计递归函数？</h3><ol><li>递归函数，必须要有一个结束条件</li><li>在递归中，一个问题可以被分解为多个子问题，子问题是父问题的实例，可以用相同的方法解决</li><li>在递归中，每次递归都要向结束条件靠拢</li><li>递归函数，每次递归都需要有一个返回值，并且用递归的值来计算</li></ol><h3 id="递归函数有什么缺点？"><a href="#递归函数有什么缺点？" class="headerlink" title="递归函数有什么缺点？"></a>递归函数有什么缺点？</h3><ol><li>空间效率低，每次函数进行递归，都会创建一个新的函数实例</li><li>可能导致栈溢出，递归次数越多，内存消耗越大</li><li>递归可能会重复计算，子问题基本相同</li></ol><h3 id="如何优化递归函数？"><a href="#如何优化递归函数？" class="headerlink" title="如何优化递归函数？"></a>如何优化递归函数？</h3><ul><li>使用尾递归</li><li>循环代替递归</li><li>使用动态规划&#x2F;记忆化技术</li></ul>]]></content>
+    
+    
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>adb命令</title>
+    <link href="/2023/11/26/adb%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/11/26/adb%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="adb命令"><a href="#adb命令" class="headerlink" title="adb命令"></a>adb命令</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">获取设备标识</span><br>adb devices<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>adb</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git命令</title>
+    <link href="/2023/07/19/Git%E5%91%BD%E4%BB%A4/"/>
+    <url>/2023/07/19/Git%E5%91%BD%E4%BB%A4/</url>
+    
+    <content type="html"><![CDATA[<h2 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">使当前目录初始化为git仓库，同时会生成一个.git隐藏的文件夹，或者重新初始化现有仓库</span><br>git init<br><span class="hljs-meta prompt_"># </span><span class="language-bash">指定一个目录成为git仓库，同时会生成一个.git隐藏的文件夹</span><br>git init newRepo<br></code></pre></td></tr></table></figure><h2 id="克隆远程仓库"><a href="#克隆远程仓库" class="headerlink" title="克隆远程仓库"></a>克隆远程仓库</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">克隆仓库</span><br>git clone &lt;repo&gt;<br><span class="hljs-meta prompt_"># </span><span class="language-bash">将仓库克隆到指定目录</span><br>git clone &lt;repo&gt; &lt;directory&gt;<br></code></pre></td></tr></table></figure><h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs shell"><span class="hljs-meta prompt_"># </span><span class="language-bash">上传远程代码合并</span><br>git push<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">下载远程代码合并</span><br>git pull<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将文件添加到暂存区</span><br>git add<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看仓库的当前状态,显示有变更的文件</span><br>git status<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">比较文件的不同,即暂存区和工作区的差异</span><br>git diff<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将文件添加到暂存区</span><br>git commit<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">回退版本</span><br>git reset<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">将文件从暂存区和工作区删除</span><br>git rm<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">移动或者重命名工作区文件</span><br>git mv<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">切换分支</span><br>git checkout<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看提交日志</span><br>git log<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">查看指定文件的修改日志</span><br>git blame &lt;file&gt;<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">命令<span class="hljs-built_in">help</span></span><br>git &lt;commond&gt; help<br><span class="hljs-meta prompt_"></span><br><span class="hljs-meta prompt_"># </span><span class="language-bash">合并分支，合并到当前分支</span><br>git merge [目标分支]<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>leetcode刷题记录</title>
+    <link href="/2023/07/18/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/"/>
+    <url>/2023/07/18/leetcode%E5%88%B7%E9%A2%98%E8%AE%B0%E5%BD%95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h2><p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p><p>示例 1：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs shell">输入：nums = [2,7,11,15], target = 9<br>输出：[0,1]<br>解释：因为 nums[0] + nums[1] == 9 ，返回 [0, 1] 。<br></code></pre></td></tr></table></figure><p>示例 2：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">输入：nums = [3,2,4], target = 6<br>输出：[1,2]<br></code></pre></td></tr></table></figure><p>示例 3：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs shell">输入：nums = [3,3], target = 6<br>输出：[0,1]<br></code></pre></td></tr></table></figure><span id="more"></span><ul><li>解法一：暴力求解</li></ul><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">twoSum</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>], target: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:<br>    l = <span class="hljs-built_in">len</span>(nums)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(l):<br>        <span class="hljs-keyword">for</span> j <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(i+<span class="hljs-number">1</span>, l):<br>            <span class="hljs-keyword">if</span> nums[i] + nums[j] == target:<br>                <span class="hljs-keyword">return</span> <span class="hljs-built_in">int</span>[]&#123;i, j&#125;<br>    <span class="hljs-keyword">return</span> []<br></code></pre></td></tr></table></figure><ul><li>解法二：哈希表映射求解</li></ul><blockquote><p>通过查找target-num的值是否存在hashTable中<br>如果不存在，则存入key-value –&gt; num-i<br>如果存在，则去除target-num值的i值，与当前的i值</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs Python"><span class="hljs-keyword">def</span> <span class="hljs-title function_">twoSum</span>(<span class="hljs-params">self, nums: <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>], target: <span class="hljs-built_in">int</span></span>) -&gt; <span class="hljs-type">List</span>[<span class="hljs-built_in">int</span>]:<br>    hashTable = <span class="hljs-built_in">dict</span>()<br>    <span class="hljs-keyword">for</span> i, num <span class="hljs-keyword">in</span> <span class="hljs-built_in">enumerate</span>(nums):<br>        <span class="hljs-keyword">if</span> target - num <span class="hljs-keyword">in</span> hashTable:<br>            <span class="hljs-keyword">return</span> [hashTable[target - num], i]<br>        hashTable[num[i]] = i<br>    <span class="hljs-keyword">return</span> []<br><br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>刷题</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>软件测试</title>
+    <link href="/2023/07/13/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/"/>
+    <url>/2023/07/13/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</url>
+    
+    <content type="html"><![CDATA[<h2 id="接口测试流程"><a href="#接口测试流程" class="headerlink" title="接口测试流程"></a>接口测试流程</h2><ul><li>需求评审</li><li>接口文档分析</li><li>设计测试用例</li><li>进行接口测试</li><li>缺陷的管理和追踪</li><li>生成测试报告</li></ul><h2 id="接口文档分析"><a href="#接口文档分析" class="headerlink" title="接口文档分析"></a>接口文档分析</h2><ul><li>接口地址</li><li>请求方式</li><li>请求数据类型</li><li>响应数据类型</li><li>接口描述</li><li>请求参数</li><li>响应状态</li><li>响应参数</li></ul><h2 id="接口测试业务"><a href="#接口测试业务" class="headerlink" title="接口测试业务"></a>接口测试业务</h2><h3 id="单接口"><a href="#单接口" class="headerlink" title="单接口"></a>单接口</h3><ul><li>正向测试<ul><li>必填参数组合</li><li>必填+非必填参数组合</li></ul></li><li>反向测试<ul><li>功能异常</li><li>数据异常</li><li>参数异常</li></ul></li></ul><h3 id="多接口"><a href="#多接口" class="headerlink" title="多接口"></a>多接口</h3><ul><li>从功能业务用例转化</li></ul>]]></content>
+    
+    
+    <categories>
+      
+      <category>学习</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>测试</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>hexo安装</title>
+    <link href="/2023/06/29/%E5%AE%89%E8%A3%85%20Hexo/"/>
+    <url>/2023/06/29/%E5%AE%89%E8%A3%85%20Hexo/</url>
+    
+    <content type="html"><![CDATA[<h2 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h2><ol><li>安装和配置Git</li><li>安装Nvm和Node</li><li>安装和配置Git</li></ol><h2 id="安装和配置Git"><a href="#安装和配置Git" class="headerlink" title="安装和配置Git"></a>安装和配置Git</h2><p><a href="https://git-scm.com/downloads">Git下载链接</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装Git</span><br>apt-get -y install git<br><br><span class="hljs-comment"># 配置Git</span><br>git config global user.name=<span class="hljs-string">&quot;testname&quot;</span><br>git config global user.email=<span class="hljs-string">&quot;test@email.com&quot;</span><br></code></pre></td></tr></table></figure><h2 id="安装NVM和Node"><a href="#安装NVM和Node" class="headerlink" title="安装NVM和Node"></a>安装NVM和Node</h2><p><a href="https://github.com/nvm-sh/nvm">nvm文档</a><br><a href="https://github.com/coreybutler/nvm-windows/releases">nvm-windows 下载链接</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 安装Node.js</span><br><span class="hljs-comment"># 检测npm和node是否安装</span><br>nvm -v<br><br><span class="hljs-comment"># nvm 已安装列表</span><br>nvm list<br><span class="hljs-comment"># nvm 远程可安装列表</span><br>nvm list available<br><span class="hljs-comment"># nvm 卸载指定版本</span><br>nvm uninstall [version]<br><span class="hljs-comment"># nvm 使用指定版本</span><br>nvm use [version]<br><br><span class="hljs-comment"># 安装顺序</span><br>nvm list available<br>nvm install [version]<br>nvm list<br>nvm use [version]<br>node -v<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">npm install npm -g<br></code></pre></td></tr></table></figure><h3 id="设置Nvm和Node镜像源"><a href="#设置Nvm和Node镜像源" class="headerlink" title="设置Nvm和Node镜像源"></a>设置Nvm和Node镜像源</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 配置当前安装包的镜像源</span><br>npm install -g &lt;安装包名&gt; --registry=https://registry.npm.taobao.org<br><span class="hljs-comment"># 本次安装为当前配置的镜像源</span><br>npm install --registry=https://registry.npm.taobao.org   <br><span class="hljs-comment"># 查看当前镜像源</span><br>npm config get registry<br><span class="hljs-comment"># 修改~/.npmrc，加入以下内容</span><br>npm config <span class="hljs-built_in">set</span> registry https://registry.npm.taobao.org   <br>registry = https://registry.npm.taobao.org   <br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 使用cnpm更换npm</span><br>npm install -g cnpm --registry=https://registry.npm.taobao.org   <br><br><span class="hljs-comment"># 查看全局安装的包</span><br>npm -g list<br></code></pre></td></tr></table></figure><h2 id="安装和配置Hexo"><a href="#安装和配置Hexo" class="headerlink" title="安装和配置Hexo"></a>安装和配置Hexo</h2><p><a href="https://hexo.io/zh-cn/">Hexo 官网文档</a></p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 全局安装 hexo</span><br>npm install -g hexo-cli<br><span class="hljs-comment"># 局部安装 hexo</span><br>npm install hexo<br><span class="hljs-comment"># 安装 Hexo 主题</span><br>git <span class="hljs-built_in">clone</span> https://github.com/theme-next/hexo-theme-next /hexo/themes/next<br></code></pre></td></tr></table></figure><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 修改_config.xml</span><br><span class="hljs-comment"># 主题</span><br>theme: next<br><span class="hljs-comment"># github部署</span><br>deploy:<br>  <span class="hljs-built_in">type</span>: git<br>  repo: git@github.com:github名字/仓库名字<br>  branch: master<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>computer</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>hexo</tag>
+      
+      <tag>node</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>Git配置</title>
+    <link href="/2023/05/31/%E9%85%8D%E7%BD%AE%20Git/"/>
+    <url>/2023/05/31/%E9%85%8D%E7%BD%AE%20Git/</url>
+    
+    <content type="html"><![CDATA[<h2 id="配置用户信息"><a href="#配置用户信息" class="headerlink" title="配置用户信息"></a>配置用户信息</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs bash">git config --global user.name <span class="hljs-string">&#x27;username&#x27;</span><br>git config --global user.email <span class="hljs-string">&#x27;youremail@email.com&#x27;</span><br></code></pre></td></tr></table></figure><span id="more"></span><h2 id="生成-id-rsa-和-id-rsa-pub"><a href="#生成-id-rsa-和-id-rsa-pub" class="headerlink" title="生成 id_rsa 和 id_rsa.pub"></a>生成 id_rsa 和 id_rsa.pub</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh-keygen -t rsa<br><br><span class="hljs-comment"># 存储密钥路径</span><br>.ssh/<br>├── authorized_keys<br>├── id_rsa<br>├── id_rsa.pub<br>└── known_hosts<br><br>authorized_keys: 免密登录/密钥登录<br>id_rsa: 密钥<br>id_rsa.pub: 公开密钥<br>known_hosts: 记录登录机器信息<br></code></pre></td></tr></table></figure><h2 id="配置Github"><a href="#配置Github" class="headerlink" title="配置Github"></a>配置Github</h2><ol><li>在github设置界面打开<code>SSH and GPG keys</code>页面</li><li>点击<code>new SSH keys</code></li><li>填写Title,任意名称</li><li><code>Key type</code>默认即可</li><li>将<code>id_rsa.pub</code>中的内容至<code>Key</code>内容框中</li></ol><h2 id="测试-Github-是否连通"><a href="#测试-Github-是否连通" class="headerlink" title="测试 Github 是否连通"></a>测试 Github 是否连通</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">ssh -t git@github.com<br></code></pre></td></tr></table></figure><h2 id="配置免密登录"><a href="#配置免密登录" class="headerlink" title="配置免密登录"></a>配置免密登录</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">scp -P 22 ~/.ssh/id_rsa.pub root@ipAddr:~/home/your<br><span class="hljs-built_in">cat</span> ~/home/your/id_rsa.pub &gt; ~/ssh/authorized_keys<br>ssh root@ipAddr<br></code></pre></td></tr></table></figure>]]></content>
+    
+    
+    <categories>
+      
+      <category>Study</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>git</tag>
+      
+      <tag>Linux</tag>
+      
+      <tag>Windows</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  
+</search>
